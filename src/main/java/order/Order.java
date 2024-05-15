@@ -1,21 +1,28 @@
-package data;
+package order;
 
-package resources;
+import java.util.List;
 
-public class OrderCard {
+public class Order {
     private String firstName;
+
     private String lastName;
+
     private String address;
-    private int metroStation;
+
+    private String metroStation;
+
     private String phone;
-    private int rentTime;
+
+    private String rentTime;
+
     private String deliveryDate;
+
     private String comment;
 
-    private String[] color;
+    private List<String> color;
 
-    public OrderCard(String firstName, String lastName, String address, int metroStation,
-                     String phone, int rentTime, String deliveryDate, String comment, String[] color) {
+    public Order(String firstName, String lastName, String address, String metroStation, String phone,
+                 String rentTime, String deliveryDate, String comment, List<String> color) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -26,17 +33,7 @@ public class OrderCard {
         this.comment = comment;
         this.color = color;
     }
-
-    public OrderCard(String firstName, String lastName, String address, int metroStation,
-                     String phone, int rentTime, String deliveryDate, String comment) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.metroStation = metroStation;
-        this.phone = phone;
-        this.rentTime = rentTime;
-        this.deliveryDate = deliveryDate;
-        this.comment = comment;
+    public Order() {
     }
 
     public String getFirstName() {
@@ -63,11 +60,11 @@ public class OrderCard {
         this.address = address;
     }
 
-    public int getMetroStation() {
+    public String getMetroStation() {
         return metroStation;
     }
 
-    public void setMetroStation(int metroStation) {
+    public void setMetroStation(String metroStation) {
         this.metroStation = metroStation;
     }
 
@@ -79,11 +76,11 @@ public class OrderCard {
         this.phone = phone;
     }
 
-    public int getRentTime() {
+    public String getRentTime() {
         return rentTime;
     }
 
-    public void setRentTime(int rentTime) {
+    public void setRentTime(String rentTime) {
         this.rentTime = rentTime;
     }
 
@@ -103,11 +100,12 @@ public class OrderCard {
         this.comment = comment;
     }
 
-    public String[] getColor() {
+    public List<String> getColor() {
         return color;
     }
-    public void setColor(String[] color) {
+
+    public void setColor(List<String> color) {
         this.color = color;
     }
-
 }
+

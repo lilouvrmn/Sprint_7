@@ -1,22 +1,26 @@
-package data;
+package courier;
 
-public class CourierCard {
+public class Courier {
+    private int id;
     private String login;
     private String password;
     private String firstName;
 
-    public CourierCard(String login, String password, String firstName) {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Courier(String login, String password, String firstName) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
     }
 
-    public CourierCard(String login, String password) {
-        this.login = login;
-        this.password = password;
-    }
-
-    public CourierCard() {
+    public Courier() {
     }
 
     public String getLogin() {
@@ -34,12 +38,12 @@ public class CourierCard {
     public void setPassword(String password) {
         this.password = password;
     }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
     public String getFirstName() {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 }
