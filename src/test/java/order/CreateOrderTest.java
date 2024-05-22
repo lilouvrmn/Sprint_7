@@ -8,17 +8,17 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.apache.http.HttpStatus.SC_CREATED;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class CreateOrder {
+public class CreateOrderTest {
 
     private OrderCreate orderCreate;
-    private Order order;
-    private int statusCode;
-    private int track;
+    private final Order order;
+    private final int statusCode;
+    private Integer track;
 
-    public CreateOrder(Order order, int statusCode) {
+    public CreateOrderTest(Order order, int statusCode) {
         this.order = order;
         this.statusCode = statusCode;
     }
@@ -42,12 +42,18 @@ public class CreateOrder {
         ValidatableResponse responseCreateOrder = orderCreate.createOrder(order);
         track = responseCreateOrder.extract().path("track");
         int actualStatusCode = responseCreateOrder.extract().statusCode();
-        assertTrue(statusCode == actualStatusCode
-                && track != 0);
+        if (statusCode == actualStatusCode) {
+            assertTrue(track != 0);
+        } else {
+            fail("Wrong status code: " + actualStatusCode);
+        }
+
     }
 
     @After
     public void cleanUp() {
-        orderCreate.cancelOrder(track);
+        if (track != null) {
+            orderCreate.cancelOrder(track);
+        }
     }
 }

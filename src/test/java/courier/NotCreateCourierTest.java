@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class NotCreateCourier {
+public class NotCreateCourierTest {
 
     private Courier courier;
     private final Courier courierWithLoginOnly = CourierGenerator.getCourierWithLoginOnly();

@@ -7,7 +7,7 @@ import org.junit.Test;
 import static org.apache.http.HttpStatus.*;
 import static org.junit.Assert.*;
 
-public class CreateCourier {
+public class CreateCourierTest {
 
     private Courier courier;
     private CourierClient courierClient;
